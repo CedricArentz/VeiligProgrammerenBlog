@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace VeiligProgrammerenBlog.Models
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Auteur> Auteurs { get; set; }
+        public DbSet<Commentaar> Commentaar { get; set; }
     }
 }
